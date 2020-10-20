@@ -18,6 +18,7 @@ def index(request):
     return render(request, "tasks/index.html", {"counts": counts, "priorities": priorities})
 
 
+# @property
 @functools.lru_cache(maxsize=128, typed=False)
 def tasks_by_cat(request, cat_slug=None):
     u = request.user
