@@ -3,7 +3,7 @@
     <title>{% block title %}PWS Todo example app{% endblock %}</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -19,10 +19,11 @@
             {% if user.is_authenticated %}
               <p>{{ user.first_name }}</p>
               <p>Login: {{ user.username }}</p>
-
-              <i class="fas fa-clipboard-list"></i>&nbsp;<a href="{% url "tasks:list" %}">задачи</a>
+              <i class="fas fa-clipboard-list"></i> <a href="{% url 'tasks:list' %}">задачи</a><br>
             {% endif %}
-	    <i class="fas fa-cog"></i>&nbsp;<a href='{% url 'admin:index' %}'>админка</a>
+            <i class="fas fa-cog"></i>&nbsp;<a href="{% url 'admin:index' %}">админка</a><br>
+            <i class="fas fa-clock"></i> <a href="{% url 'tasks:datetime' %}">Текущее время и дата</a><br>
+            <i class="fas fa-home"></i> <a href="/">главная</a><br>
           {% endblock %}
         </div>
 
@@ -30,8 +31,13 @@
           {% block main_content %}
           {% endblock %}
         </div>
-
       </div>
     </div>
+
+    <div>
+      {% block extra_content %}
+      {% endblock %}
+    </div>
+
   </body>
 </html>

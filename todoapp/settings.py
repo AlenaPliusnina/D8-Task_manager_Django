@@ -61,6 +61,8 @@ DATABASES = {
 
 
 LANGUAGE_CODE = 'ru-RU'
+TIME_ZONE = 'Europe/Moscow'
+USE_TZ = True
 
 
 django_heroku.settings(locals())
