@@ -1,5 +1,7 @@
 Task manager Django app / Трекер задач
 
+Проект на Heroku: https://quiet-harbor-46674.herokuapp.com/
+
 Разворачиваем проект:
 
 1. Скачайте репозиторий
