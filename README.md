@@ -1,5 +1,7 @@
 # Task manager Django app / Трекер задач
 
+     Django, Sqlite3, Memcached
+
 Проект на Heroku: https://quiet-harbor-46674.herokuapp.com/
 
 Разворачиваем проект локально:
